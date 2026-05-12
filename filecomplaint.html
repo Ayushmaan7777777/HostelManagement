@@ -175,22 +175,46 @@
         analyzeButton.disabled = !descriptionInput.value.trim();
       }
 
-      function getPrediction(description) {
-        const text = description.toLowerCase();
-        if (text.includes('leak') || text.includes('water') || text.includes('plumbing') || text.includes('tap')) {
-          return { category: 'Plumbing', priority: 'High', reasoning: 'The issue appears to involve water or plumbing and needs prompt attention.' };
-        }
-        if (text.includes('power') || text.includes('electric') || text.includes('socket') || text.includes('light')) {
-          return { category: 'Electrical', priority: 'Medium', reasoning: 'This sounds like an electrical concern that should be checked soon.' };
-        }
-        if (text.includes('wifi') || text.includes('internet') || text.includes('network')) {
-          return { category: 'Connectivity', priority: 'Low', reasoning: 'The issue seems related to connectivity or network access.' };
-        }
-        if (text.includes('fire') || text.includes('smoke') || text.includes('gas') || text.includes('danger') || text.includes('disaster')) {
-          return { category: 'Safety', priority: 'Critical', reasoning: 'This is a potentially dangerous issue and requires immediate action.' };
-        }
-        return { category: 'General', priority: 'Medium', reasoning: 'The AI categorized this as a general concern for review.' };
-      }
+      analyzeButton.addEventListener('click', async () => {
+
+  if (!descriptionInput.value.trim()) return;
+
+  analyzeButton.disabled = true;
+  analyzeText.textContent = 'AI is analyzing...';
+
+  try {
+
+    const response = await fetch("analyze.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        description: descriptionInput.value
+      })
+    });
+
+    const text = await response.text();
+
+    const result = JSON.parse(text);
+
+    showAnalysis({
+      category: result.category,
+      priority: result.priority,
+      reasoning: result.reason
+    });
+
+  } catch(error) {
+
+    console.error(error);
+    alert("AI analysis failed");
+
+  }
+
+  analyzeText.textContent = 'Analyze with AI';
+  analyzeButton.disabled = false;
+
+});
 
       function showAnalysis(result) {
         const categoryBadge = analysisResult.querySelector('.text-blue-500');
