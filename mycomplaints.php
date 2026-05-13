@@ -667,9 +667,9 @@ strong {
         <p>AI accurately categorized 94% of issues last month. Resource allocation optimized by 12%.</p>
         <div class="profile">
           <div class="profile-info">
-            <div class="avatar">BS</div>
+            <div class="avatar">AS</div>
             <div class="profile-text">
-              <strong>Bhupendra S.</strong>
+              <strong>Ayush.</strong>
               <span>Admin Access</span>
             </div>
           </div>
