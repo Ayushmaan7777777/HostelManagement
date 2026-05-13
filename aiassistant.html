@@ -1,92 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Assistant</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="aiassistant.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <aside class="sidebar">
-        <div>
-          <div class="brand">
-            <div class="brand-mark">A</div>
-            <div class="brand-text">
-              <p>ADGIPS</p>
-              <p>Facility Central</p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Assistant</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 overflow-hidden">
+
+  <div class="flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside class="w-[280px] bg-white border-r border-slate-200 p-8 flex flex-col justify-between">
+
+      <div>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-xl">
+            A
           </div>
 
-        <nav class="space-y-3 text-slate-700">
-            <a href="index.php" class="block rounded-2xl px-4 py-3 hover:bg-slate-100">Dashboard</a>
-            <a href="mycomplaints.php" class="block rounded-2xl px-4 py-3 hover:bg-slate-100">My Complaints</a>
-            <a href="filecomplaint.html" class="block rounded-2xl px-4 py-3 hover:bg-slate-100">File Complaint</a>
-            <a href="assessmentmanagement.html" class="block rounded-2xl px-4 py-3 hover:bg-slate-100">Asset Management</a>
-            <a href="aiassistant.html" class="block rounded-2xl px-4 py-3 bg-slate-100 text-blue-700 font-semibold">AI Assistant</a>
-          </nav>
-        </div>
-
-        <div class="sidebar-footer">
-          <div class="info-card">
-            <p>AI Performance</p>
-            <p>AI accurately categorized 94% of issues last month. Resource allocation optimized by 12%.</p>
-          </div>
-          <div class="profile-card">
-            <div class="profile-avatar">AS</div>
-            <div class="profile-data">
-              <p>Ayush.</p>
-              <p>Admin Access</p>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <main class="main-content">
-        <section class="header">
           <div>
-            <h1 class="page-title">Support Center</h1>
-            <p class="page-subtitle">Use the floating chat icon at the bottom right to talk to our AI assistant 24/7.</p>
+            <h2 class="font-bold text-lg">ADGIPS</h2>
+            <p class="text-sm text-slate-500">Facility Central</p>
           </div>
-          <div class="page-actions">
-            <label class="search-box">
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.558 3.662l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387A6 6 0 012 8z" clip-rule="evenodd" />
-              </svg>
-              <input type="text" placeholder="Search rooms, assets..." aria-label="Search" />
-            </label>
-            <div class="avatar-pill">AD</div>
-          </div>
-        </section>
+        </div>
 
-        <section class="center-panel">
-          <div class="support-card">
-            <div class="support-icon">?</div>
-            <h2 class="support-title">Support Center</h2>
-            <p class="support-text">Use the floating chat icon at the bottom right to talk to our AI assistant 24/7.</p>
+        <!-- NAV -->
+        <nav class="space-y-3">
+
+          <a href="index.php"
+             class="block px-4 py-3 rounded-2xl hover:bg-slate-100 transition">
+             Dashboard
+          </a>
+
+          <a href="mycomplaints.php"
+             class="block px-4 py-3 rounded-2xl hover:bg-slate-100 transition">
+             My Complaints
+          </a>
+
+          <a href="filecomplaint.html"
+             class="block px-4 py-3 rounded-2xl hover:bg-slate-100 transition">
+             File Complaint
+          </a>
+
+          <a href="assessmentmanagement.html"
+             class="block px-4 py-3 rounded-2xl hover:bg-slate-100 transition">
+             Asset Management
+          </a>
+
+          <a href="aiassistant.html"
+             class="block px-4 py-3 rounded-2xl bg-slate-100 text-blue-700 font-semibold">
+             AI Assistant
+          </a>
+
+        </nav>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="space-y-5">
+
+        <div class="bg-slate-900 text-white rounded-3xl p-5">
+          <p class="uppercase tracking-[0.2em] text-xs text-sky-300 font-semibold">
+            AI Performance
+          </p>
+
+          <p class="mt-4 text-sm leading-7 text-slate-200">
+            AI accurately categorized 94% of issues last month.
+            Resource allocation optimized by 12%.
+          </p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 flex items-center gap-3">
+
+          <div class="w-11 h-11 rounded-full bg-slate-200 flex items-center justify-center font-bold">
+            AS
           </div>
-        </section>
-      </main>
+
+          <div>
+            <p class="font-semibold">Ayush.</p>
+            <p class="text-sm text-slate-500">Admin Access</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 p-8 overflow-y-auto">
+
+      <!-- HEADER -->
+      <div class="flex justify-between items-center mb-10">
+
+        <div>
+          <h1 class="text-4xl font-bold text-slate-900">
+            Support Center
+          </h1>
+
+          <p class="mt-4 text-slate-500 text-md">
+            Use the floating chat icon to talk with AI assistant.
+          </p>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="flex items-center gap-4">
+
+          <div class="bg-white border border-slate-200 rounded-full px-5 py-3 flex items-center gap-3 w-[320px]">
+
+            <svg class="w-5 h-5 text-slate-400"
+                 fill="currentColor"
+                 viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.558 3.662l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387A6 6 0 012 8z"
+                    clip-rule="evenodd"/>
+            </svg>
+
+            <input
+              type="text"
+              placeholder="Search..."
+              class="outline-none bg-transparent w-full"
+            />
+
+          </div>
+
+          <div class="w-11 h-11 rounded-full bg-slate-300 flex items-center justify-center font-bold">
+            AD
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CENTER CARD -->
+      <div class="bg-white border border-slate-200 rounded-[32px] h-[78vh] flex items-center justify-center shadow-sm">
+
+        <div class="text-center max-w-xl">
+
+          <div class="w-24 h-24 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-4xl mx-auto mb-6">
+            ?
+          </div>
+
+          <h2 class="text-3xl font-bold text-slate-900">
+            Support Center
+          </h2>
+
+          <p class="mt-5 text-slate-500 text-md leading-8">
+            Use the floating chat icon at the bottom right
+            to interact with your AI assistant powered by Ollama.
+          </p>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- FLOATING BUTTON -->
+  <button
+    id="chatToggle"
+    class="fixed bottom-8 right-8 w-16 h-16 rounded-3xl bg-blue-600 text-white text-2xl shadow-2xl hover:scale-105 transition z-50"
+  >
+    💬
+  </button>
+
+  <!-- CHAT PANEL -->
+  <div
+    id="chatPanel"
+    class="fixed top-0 right-0 h-screen w-[400px] bg-white shadow-2xl border-l border-slate-200 flex flex-col translate-x-full transition-transform duration-300 z-40"
+  >
+
+    <!-- HEADER -->
+    <div class="bg-slate-900 text-white p-5 flex justify-between items-center">
+
+      <div>
+        <h3 class="font-bold text-lg">AI Assistant</h3>
+        <p class="text-sm text-slate-300">
+          Powered by Ollama
+        </p>
+      </div>
+
+      <button id="closeChat" class="text-2xl">
+        ×
+      </button>
+
     </div>
 
-    <div class="assistant-floating" title="Open AI Assistant">💬</div>
+    <!-- BODY -->
+    <div
+      id="chatBody"
+      class="flex-1 overflow-y-auto p-5 bg-slate-50 space-y-4"
+    >
 
-    <script>
-      const navLinks = document.querySelectorAll('.nav-item a');
-      const currentPage = window.location.pathname.split('/').pop();
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 max-w-[80%]">
+        Hello 👋<br>
+        How can I help you today?
+      </div>
 
-      navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPage) {
-          link.classList.add('active');
-        }
-      });
+    </div>
 
-      const floatingChat = document.querySelector('.assistant-floating');
-      floatingChat.addEventListener('click', () => {
-        alert('AI Assistant chat is coming soon!');
-      });
-    </script>
-  </body>
+    <!-- FOOTER -->
+    <div class="p-4 border-t border-slate-200 flex gap-3">
+
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Type your message..."
+        class="flex-1 border border-slate-300 rounded-xl px-4 outline-none"
+      />
+
+      <button
+        id="sendBtn"
+        class="bg-blue-600 text-white px-5 rounded-xl hover:bg-blue-700 transition"
+      >
+        Send
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const chatToggle = document.getElementById("chatToggle");
+    const chatPanel = document.getElementById("chatPanel");
+    const closeChat = document.getElementById("closeChat");
+
+    const sendBtn = document.getElementById("sendBtn");
+    const userInput = document.getElementById("userInput");
+    const chatBody = document.getElementById("chatBody");
+
+    /* OPEN CHAT */
+    chatToggle.addEventListener("click", () => {
+      chatPanel.classList.remove("translate-x-full");
+      chatToggle.classList.add("hidden");
+    });
+
+    /* CLOSE CHAT */
+    closeChat.addEventListener("click", () => {
+      chatPanel.classList.add("translate-x-full");
+      chatToggle.classList.remove("hidden");
+    });
+
+    async function sendMessage() {
+
+      const message = userInput.value.trim();
+
+      if(message === "") return;
+
+      /* USER MESSAGE */
+      const userDiv = document.createElement("div");
+
+      userDiv.className =
+      "bg-blue-600 text-white p-4 rounded-2xl max-w-[80%] ml-auto w-fit";
+
+      userDiv.textContent = message;
+
+      chatBody.appendChild(userDiv);
+
+      userInput.value = "";
+
+      /* BOT LOADING */
+      const botDiv = document.createElement("div");
+
+      botDiv.className =
+      "bg-white border border-slate-200 p-4 rounded-2xl max-w-[80%]";
+
+      botDiv.textContent = "Typing...";
+
+      chatBody.appendChild(botDiv);
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      try{
+
+        const response = await fetch("chatbot.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: message
+          })
+        });
+
+        const data = await response.json();
+
+        botDiv.textContent = data.reply;
+
+      }catch(error){
+
+        botDiv.textContent = "AI server error.";
+
+      }
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+
+    userInput.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        sendMessage();
+      }
+    });
+
+  </script>
+
+</body>
 </html>
