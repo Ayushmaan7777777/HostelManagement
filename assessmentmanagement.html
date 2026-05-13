@@ -215,13 +215,29 @@
         return card;
       }
 
-      function attachUpdateHandler(button) {
-        button.addEventListener('click', event => {
-          const card = event.target.closest('.room-card');
-          const roomNumber = card.querySelector('.room-badge .number').textContent;
-          alert(`Update requested for Room ${roomNumber}.`);
-        });
-      }
+     function attachUpdateHandler(button) {
+  button.addEventListener('click', event => {
+
+    const card = event.target.closest('.room-card');
+
+    const confirmDelete = confirm("Do you want to remove this room card?");
+
+    if (confirmDelete) {
+
+      card.style.transition = "0.3s ease";
+
+      card.style.opacity = "0";
+
+      card.style.transform = "scale(0.9)";
+
+      setTimeout(() => {
+        card.remove();
+      }, 300);
+
+    }
+
+  });
+}
 
       function initUpdateButtons() {
         document.querySelectorAll('.update-btn').forEach(button => attachUpdateHandler(button));
